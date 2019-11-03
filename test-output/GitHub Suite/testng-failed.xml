@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [GitHub Suite]">
+  <listeners>
+    <listener class-name="test.Listeners"/>
+  </listeners>
+  <test name="Automation Positive Tests(failed)">
+    <classes>
+      <class name="test.GitHubTest">
+        <methods>
+          <include name="verifyLastedReleaset"/>
+          <include name="showFirstResultName_Star"/>
+          <include name="setup"/>
+          <include name="showLastReleaseTagResult"/>
+          <include name="getResponse"/>
+        </methods>
+      </class> <!-- test.GitHubTest -->
+    </classes>
+  </test> <!-- Automation Positive Tests(failed) -->
+</suite> <!-- Failed suite [GitHub Suite] -->
