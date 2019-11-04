@@ -47,17 +47,17 @@ public class GitHubHandlerRequest {
 	/***
 	 * The HTTP client send a request with a URL and receives a response with the available repositories.
 	 * @param requestURL
-	 * @param USER_AGENT
+	 * @param USERAGENT
 	 * @return String
 	 */
-	public String getHttpResponse(String requestURL, String USER_AGENT) {
+	public String getHttpResponse(String requestURL, String USERAGENT) {
 
 		String result = null;
 		// Instantiating HttpClient
 		HttpClient client = HttpClientBuilder.create().build();
 		// Creating a Method
 		HttpGet request = new HttpGet(requestURL);
-		request.addHeader("User-Agent", USER_AGENT);
+		request.addHeader("User-Agent", USERAGENT);
 		HttpResponse response;
         
 		try {
@@ -92,7 +92,6 @@ public class GitHubHandlerRequest {
 	/***
 	 * It converts an InputStream into a stream. The string only contains the following keys:
      * name,stargazers_count,tags_url
-     *
 	 * @param is
 	 * @return String
 	 */
@@ -101,7 +100,6 @@ public class GitHubHandlerRequest {
 
 		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 		StringBuilder sb = new StringBuilder();
-
 		String line = null;
 		// this part only add into the array some keys of all the repositories
 		try {
@@ -121,7 +119,6 @@ public class GitHubHandlerRequest {
 				e.printStackTrace();
 			}
 		}
-		
 		return sb.toString();
 	}
 

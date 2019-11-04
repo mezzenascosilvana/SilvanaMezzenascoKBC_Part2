@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="1" ignored="0" total="4" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="GitHub Suite" duration-ms="23701" started-at="2019-11-03T21:54:01Z" finished-at="2019-11-03T21:54:25Z">
+  <suite name="GitHub Suite" duration-ms="17716" started-at="2019-11-04T19:52:41Z" finished-at="2019-11-04T19:52:59Z">
     <groups>
     </groups>
-    <test name="Automation Positive Tests" duration-ms="23701" started-at="2019-11-03T21:54:01Z" finished-at="2019-11-03T21:54:25Z">
+    <test name="Automation Positive Tests" duration-ms="17716" started-at="2019-11-04T19:52:41Z" finished-at="2019-11-04T19:52:59Z">
       <class name="test.GitHubTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:test.GitHubTest@5afa04c]" name="setup" is-config="true" duration-ms="21407" started-at="2019-11-03T21:54:01Z" finished-at="2019-11-03T21:54:23Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:test.GitHubTest@5afa04c]" name="setup" is-config="true" duration-ms="15014" started-at="2019-11-04T19:52:41Z" finished-at="2019-11-04T19:52:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="getResponse()[pri:0, instance:test.GitHubTest@5afa04c]" name="getResponse" duration-ms="1926" started-at="2019-11-03T21:54:23Z" finished-at="2019-11-03T21:54:25Z">
+        <test-method status="PASS" signature="getResponse()[pri:0, instance:test.GitHubTest@5afa04c]" name="getResponse" duration-ms="2269" started-at="2019-11-04T19:52:57Z" finished-at="2019-11-04T19:52:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResponse -->
-        <test-method status="PASS" signature="showFirstResultName_Star()[pri:0, instance:test.GitHubTest@5afa04c]" name="showFirstResultName_Star" duration-ms="1" started-at="2019-11-03T21:54:25Z" depends-on-methods="test.GitHubTest.getResponse" finished-at="2019-11-03T21:54:25Z">
+        <test-method status="PASS" signature="showFirstResultName_Star()[pri:0, instance:test.GitHubTest@5afa04c]" name="showFirstResultName_Star" duration-ms="3" started-at="2019-11-04T19:52:59Z" depends-on-methods="test.GitHubTest.getResponse" finished-at="2019-11-04T19:52:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- showFirstResultName_Star -->
-        <test-method status="PASS" signature="showLastReleaseTagResult()[pri:0, instance:test.GitHubTest@5afa04c]" name="showLastReleaseTagResult" duration-ms="320" started-at="2019-11-03T21:54:25Z" depends-on-methods="test.GitHubTest.showFirstResultName_Star" finished-at="2019-11-03T21:54:25Z">
+        <test-method status="PASS" signature="showLastReleaseTagResult()[pri:0, instance:test.GitHubTest@5afa04c]" name="showLastReleaseTagResult" duration-ms="371" started-at="2019-11-04T19:52:59Z" depends-on-methods="test.GitHubTest.showFirstResultName_Star" finished-at="2019-11-04T19:52:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- showLastReleaseTagResult -->
-        <test-method status="FAIL" signature="verifyLastedReleaset()[pri:0, instance:test.GitHubTest@5afa04c]" name="verifyLastedReleaset" duration-ms="14" started-at="2019-11-03T21:54:25Z" depends-on-methods="test.GitHubTest.showLastReleaseTagResult" finished-at="2019-11-03T21:54:25Z">
+        <test-method status="FAIL" signature="verifyLastedReleaset()[pri:0, instance:test.GitHubTest@5afa04c]" name="verifyLastedReleaset" duration-ms="4" started-at="2019-11-04T19:52:59Z" depends-on-methods="test.GitHubTest.showLastReleaseTagResult" finished-at="2019-11-04T19:52:59Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>

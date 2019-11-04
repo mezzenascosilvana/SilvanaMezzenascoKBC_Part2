@@ -77,7 +77,6 @@ public class GitHubHandlerResponse {
 
 			break;
 		default:
-
 		}
 		assertTrue(result !=null);
 		return subpart;
@@ -86,7 +85,6 @@ public class GitHubHandlerResponse {
 
 	/***
 	 * Search inside the string for the 'url' and return it
-	 * 
 	 * @param url
 	 * @return String
 	 */
@@ -102,7 +100,6 @@ public class GitHubHandlerResponse {
 
 	/***
 	 * Search inside the string for the 'name' and return it
-	 * 
 	 * @param url
 	 * @return String
 	 */
@@ -120,7 +117,6 @@ public class GitHubHandlerResponse {
 	 * For the top result repository read the latest release tag and verify if the
 	 * 2nd param given by CLI refer to an older or newer release tag (e.g. 6.13.1)
 	 * and print it in a message
-	 * 
 	 * @param result
 	 * @param USER_AGENT
 	 * @return
@@ -138,7 +134,6 @@ public class GitHubHandlerResponse {
 
 	/***
 	 * It creates the new URL to search the release tag
-	 * 
 	 * @param result
 	 * @return String
 	 */
@@ -152,7 +147,6 @@ public class GitHubHandlerResponse {
 	/***
 	 * Verify if the 2nd param given by CLI refer to an older or newer release tag
 	 * (e.g. 6.13.1) and print it in a message
-	 * 
 	 * @param lastReleaseTag
 	 * @param parameter      : 2nd param given by CLI
 	 * @return Boolean

@@ -19,12 +19,12 @@ public class GitHubTest {
 	static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36";
 	static final String REQUESTURL = "https://api.github.com/search/repositories";
 	public static CreateLog log = new CreateLog();
-	public static String newRequestUrl_Temp= null;
-	public static String result_Temp= null;
+	public static String newRequestUrlTemp= null;
+	public static String resultTemp= null;
 	public static String lastReleaseTagResult_Temp=null;
 	public static GitHubHandlerResponse obj2 = new GitHubHandlerResponse();
 	public static SetParameters obj3 =new SetParameters();
-	public static ArrayList<String> parameters_Temp = null;
+	public static ArrayList<String> parametersTemp = null;
 
     /***
      * Setup the pareameters and create the first url.
@@ -35,12 +35,12 @@ public class GitHubTest {
 	public void setup() throws IOException {
 		System.out.println("**************Start the Set up*****************");
 		ArrayList<String> parameters = obj3. setUpParameters( );
-		parameters_Temp =parameters ;
+		parametersTemp =parameters ;
 		String newRequestUrl = REQUESTURL + "?q=" + parameters.get(0) + "&sort=stars&order=desc";
 		System.out.println(REQUESTURL);
 		log.createLog("RESPONSE: " + newRequestUrl);
 	    assertTrue(newRequestUrl!=null);
-	    newRequestUrl_Temp=newRequestUrl;
+	    newRequestUrlTemp=newRequestUrl;
 	    System.out.println("**************Finish the Set up*****************");
 	}
    
@@ -53,9 +53,9 @@ public class GitHubTest {
 	public void getResponse() throws IOException {
 		System.out.println("**************Start to get Response*****************");
 		GitHubHandlerRequest obj1 =new GitHubHandlerRequest();
-		String result = obj1.getHttpResponse(newRequestUrl_Temp, USER_AGENT);
+		String result = obj1.getHttpResponse(newRequestUrlTemp, USER_AGENT);
 	    AssertJUnit.assertTrue(result!=null);
-	    result_Temp=result;
+	    resultTemp=result;
 	    System.out.println("**************Finish to get Response*****************");
 	}
 	 /***
@@ -65,7 +65,7 @@ public class GitHubTest {
 	@Test(dependsOnMethods = { "getResponse" })
 	public void showFirstResultName_Star() throws IOException {
 		System.out.println("**************Start to Show the Result Names*****************");
-		ArrayList<String> nameAndStarResult = obj2.getKeys(result_Temp, "ShowFirstResultName&Star");
+		ArrayList<String> nameAndStarResult = obj2.getKeys(resultTemp, "ShowFirstResultName&Star");
 	    AssertJUnit.assertTrue(nameAndStarResult!=null);
 		//showLastReleaseTagResult(obj2, result);
 		log.createLog("RESPONSE: " + nameAndStarResult.get(0));
@@ -81,7 +81,7 @@ public class GitHubTest {
 	@Test(dependsOnMethods = { "showFirstResultName_Star" })
 	public void showLastReleaseTagResult() throws IOException {
 		System.out.println("**************Start to Show the last Release Tag Result*****************");
-		String lastReleaseTagResult = obj2.showLatestReleaseTag(result_Temp, USER_AGENT);
+		String lastReleaseTagResult = obj2.showLatestReleaseTag(resultTemp, USER_AGENT);
 	    AssertJUnit.assertTrue(lastReleaseTagResult!=null);
 		log.createLog("RESPONSE SECOND URL: " + lastReleaseTagResult);	
 		System.out.println("The result for the test is : "+ lastReleaseTagResult);
@@ -98,7 +98,7 @@ public class GitHubTest {
 	@Test(dependsOnMethods = { "showLastReleaseTagResult" })
 	public void verifyLastedReleaset(  ) throws IOException {
 		System.out.println("**************Start to Verify the lasted release*****************");
-		assertTrue(obj2.verifyLastedRelease(lastReleaseTagResult_Temp, parameters_Temp.get(1)));
+		assertTrue(obj2.verifyLastedRelease(lastReleaseTagResult_Temp, parametersTemp.get(1)));
 		System.out.println("**************Finish to Verify the lasted release*****************");
 	}
 
